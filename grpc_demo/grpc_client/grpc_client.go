@@ -10,14 +10,13 @@ import (
 	"log"
 )
 
-// todo: 证书认证
 func main() {
-	tls, err := credentials.NewClientTLSFromFile("certificate.crt", "192.168.50.13")
+	tls, err := credentials.NewClientTLSFromFile("server.crt", "localhost")
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	conn, err := grpc.Dial(":8088", grpc.WithTransportCredentials(tls))
+	conn, err := grpc.Dial(":8087", grpc.WithTransportCredentials(tls))
 	if err != nil {
 		log.Fatalln(err)
 	}

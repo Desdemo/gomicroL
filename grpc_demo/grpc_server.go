@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	tls, err := credentials.NewServerTLSFromFile("certificate.crt", "blt.key")
+	tls, err := credentials.NewServerTLSFromFile("server.crt", "server.key")
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -19,7 +19,7 @@ func main() {
 
 	service2.RegisterProdServiceServer(rpcServer, new(service.ProdService))
 
-	listener, err := net.Listen("tcp", ":8088")
+	listener, err := net.Listen("tcp", ":8087")
 	if err != nil {
 		log.Fatalln(err)
 	}
