@@ -3,14 +3,14 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/aws/aws-sdk-go/service/alexaforbusiness"
+
 	pb "gomicroL/hello/proto/hello_http"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/grpclog"
 	"net"
 )
 
-const Address = "127.0.0.1:50052"
+const Address = "127.0.0.1:8088"
 
 type helloService struct {
 }

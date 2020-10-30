@@ -5,7 +5,6 @@ import (
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/grpclog"
-	"log"
 	"net/http"
 
 	gw "gomicroL/hello/proto/hello_http"
@@ -16,7 +15,7 @@ func main() {
 	ctx, cancel := context.WithCancel(ctx)
 	defer cancel()
 
-	endpoint := "127.0.0.1:50052"
+	endpoint := "127.0.0.1:8088"
 	mux := runtime.NewServeMux()
 	ops := []grpc.DialOption{grpc.WithInsecure()}
 
